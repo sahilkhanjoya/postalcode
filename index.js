@@ -1,15 +1,12 @@
 const fs = require('fs');
 const csv = require('csv-parser');
 const express = require('express');
+const cors = require('cors'); 
 const app = express();
 const port = 8080; // You can change this to any port you prefer
-
+app.use(cors()); 
 // Sample data (you can replace this with data from your CSV file)
-const sampleData = [
-  { id: 1, name: 'John Doe', age: 25 },
-  { id: 2, name: 'Jane Smith', age: 30 },
-  // Add more sample data as needed
-];
+
 
 // Define a route to get all data
 app.get('/api/data', (req, res) => {
